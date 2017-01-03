@@ -12,6 +12,8 @@
 
         SelectableRowsFeature.prototype.onCheckboxChange = function(){
             var that = this;
+
+            CheckBoxMgmtProvider.getCheckOption(that.ctrl.dataStorage.storage);
             // we need to push it to the event loop to make it happen last
             // (e.g.: all the elements can be selected before we call the callback)
             $timeout(function(){
